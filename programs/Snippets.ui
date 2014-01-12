@@ -1,0 +1,54 @@
+<Category>
+	<Snippet Name="splitInts">	int[] splitInts(String s)
+	{
+		String[] split = s.split(&quot;[ ,]+&quot;);
+		int[] ret = new int[split.length];
+		for (int i=0; i&lt;ret.length; i++)
+			ret[i] = Integer.parseInt(split[i]);
+		return ret;
+	}</Snippet>	<Snippet Name="nextPerm">	public boolean nextPerm(int[] a) {
+
+		int i;
+		int j;
+		int N;
+		int temp;
+
+		N = a.length;
+		i = N - 2;
+
+		for (; i &gt;= 0; i--) {
+			if (a[i] &lt; a[i + 1])
+				break;
+		}
+		if (i &lt; 0)
+			return false;
+
+		for (j = N - 1; j &gt;= i; j--) {
+			if (a[j] &gt; a[i]) {
+				temp = a[j];
+				a[j] = a[i];
+				a[i] = temp;
+				break;
+			}
+		}
+
+		for (j = i + 1; j &lt; (N + i + 1) / 2; j++) {
+			temp = a[N - j + i];
+			a[N - j + i] = a[j];
+			a[j] = temp;
+		}
+
+		return true;
+	}</Snippet>	<Snippet Name="fact">	public long fact(int n) {
+	
+		long N;
+		
+		N = n;
+		
+		if (N == 0)
+			return 1;
+			
+		return N * fact(n - 1);
+		
+	
+	}</Snippet></Category>
